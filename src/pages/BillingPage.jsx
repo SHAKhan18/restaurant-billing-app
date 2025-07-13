@@ -35,9 +35,6 @@ const BillingPage = () => {
   const [gstRate, setGstRate] = useState(0);
   const [roundOff, setRoundOff] = useState(false);
   const [orderHistory, setOrderHistory] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [minPrice, setMinPrice] = useState(0);
-  const [maxPrice, setMaxPrice] = useState(1000);
   const [tableNumber, setTableNumber] = useState("");
   const [waiterName, setWaiterName] = useState("");
   const [newItemName, setNewItemName] = useState("");
@@ -105,11 +102,7 @@ const BillingPage = () => {
       setCart(updatedCart);
     }
   };
-  
-  const removeFromCart = (id) => {
-    const updatedCart = cart.filter((item) => item.id !== id);
-    setCart(updatedCart);
-  };
+
   const removeFromMenu = async (id) => {
     const updatedMenu = menu.filter((item) => item.id !== id);
     setMenu(updatedMenu);
